@@ -33,6 +33,7 @@ def MMT(df,lag,suffix=''):
 	use lag-1 compare to other technicals
 	'''
 	df_mmt = df.shift(1).pct_change(lag-1) # pct_change: percentage change
+	df_mmt = df_mmt.replace([np.inf,-np.inf,np.nan],0)
 	df_mmt.name = 'MMT' + suffix
 	return df_mmt
 

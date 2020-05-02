@@ -9,7 +9,7 @@ def MakeFeatureMatrix(ticker,startdate,enddate):
     P.Aclose = df_stock['Adj Close']
     P.Volume = df_stock['Volume']
 
-    lag = 5
+    lag = 2
 
     df_joint = P.Aclose.to_frame().join(Tech.MA(P.Aclose, lag))
 
