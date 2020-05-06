@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from scipy.stats import t
 
-
 def autocorrelation(df_return,lag):
     df_autocorr = df_return.apply(lambda col: col.autocorr(lag), axis=0)
     df_autocorr.name = 'autocorr'
